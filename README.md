@@ -59,3 +59,6 @@ GET(VER UN ID EN ESPECIAL):
 http://localhost/API/api/marcas/7
 
 http://localhost/API/api/productos/15
+
+
+LA BASE DE DATOS TIENE COMO NOMBRE "WEB 2", CON UNA SEPARACION ENTRE WEB Y 2
