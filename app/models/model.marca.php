@@ -10,8 +10,25 @@ class MarcaModel extends modelAbstract{
      }
     
 
-    function ObtenerMarcas() {
-        $query = $this->db->prepare('SELECT * FROM marca');
+    function ObtenerMarcas($orderBy = false) {
+
+        
+        $sql = 'SELECT * FROM marca';
+
+        if($orderBy){
+            switch ($orderBy) {
+                case 'idASC':
+                    $sql .= ' ORDER BY id ASC';
+                    break;
+                case 'idDESC':
+                        $sql .= ' ORDER BY id DESC';
+                    break;
+        
+            }
+          
+        }
+
+        $query = $this->db->prepare($sql);
         $query->execute();
         
         return $query->fetchAll(PDO::FETCH_OBJ);
